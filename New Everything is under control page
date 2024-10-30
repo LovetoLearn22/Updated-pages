@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything is Under Control</title>
+    <link rel="icon" href="IMAGES/KIKO%20FOTO.jpg" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 1160px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Centered Breadcrumb styling */
+        .breadcrumb {
+            font-size: 16px;
+            margin-top: 50px;
+            margin-bottom: 400px; /* Adds space below breadcrumbs */
+            text-align: center;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1); /* Adds subtle highlight */
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+
+        /* Container for images and video */
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            margin: 0 auto 450px; /* Centers and adds space below the images */
+        }
+
+        .container .box {
+            position: relative;
+            width: 275px;
+            height: 275px;
+            background: #000;
+            transition: 0.5s;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            margin: 15px;
+        }
+
+        .container:hover .box {
+            transform: rotateY(25deg);
+        }
+
+        .container .box:hover ~ .box {
+            transform: rotateY(-25deg);
+        }
+
+        .container .box:hover {
+            transform: rotateY(0deg) scale(1.25);
+            z-index: 1;
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .container .box .imgBx {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container .box .imgBx:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #f00, #000);
+            z-index: 1;
+            opacity: 0;
+            transition: 0.5s;
+            mix-blend-mode: multiply;
+        }
+
+        .container .box:hover .imgBx:before {
+            opacity: 1;
+        }
+
+        .container .box .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container .box .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            padding: 20px;
+            align-items: flex-end;
+            box-sizing: border-box;
+        }
+
+        .container .box .content h2 {
+            color: #fff;
+            transition: 0.5s;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-size: 20px;
+            transform: translateY(200px);
+            transition-delay: 0.3s;
+        }
+
+        .container .box:hover .content h2 {
+            transform: translateY(0px);
+        }
+
+        .container .box .content p {
+            color: #fff;
+            transition: 0.5s;
+            font-size: 14px;
+            transform: translateY(200px);
+            transition-delay: 0.4s;
+        }
+
+        .container .box:hover .content p {
+            transform: translateY(0px);
+        }
+
+        /* YouTube video link styling */
+        .video-link {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 0 auto; /* Centers the video */
+            margin-bottom: 100px;
+        }
+
+        .video-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <!-- Centered Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="about_me.html">About</a> &gt;
+        <a href="FOMDAK_Page.html">FOMDAK</a> &gt;
+        <a href="Everything%20is%20Under%20Control.html">Everything is Under Control</a>
+    </div>
+
+    <!-- Flexbox container for images with effects -->
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img src="IMAGES/left%20everything%20copy.png" alt="Left Everything is Under Control">
+            </div>
+            <div class="content">
+                <h2>"The City of Consumption"</h2>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="IMAGES/center%20everything%20copy.png" alt="Center Everything is Under Control">
+            </div>
+            <div class="content">
+                <h2>"Muted Resistance"</h2>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="IMAGES/right%20everything%20copy.png" alt="Right Everything is Under Control">
+            </div>
+            <div class="content">
+                <h2>"The Machinery of Compliance"</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube video link with play button overlay -->
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Watch the Video">
+        <span class="play-button">&#9658;</span>
+    </a>
+</div>
+
+</body>
+</html>
